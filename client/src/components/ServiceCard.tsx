@@ -1,11 +1,29 @@
 import type { Service } from "../api/services";
 
-export function ServiceCard({ service }: { service: Service }) {
+interface Props {
+  service: Service;
+}
+
+export default function ServiceCard({ service }: Props) {
   return (
-    <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-      <div style={{ fontWeight: 700 }}>{service.name}</div>
-      <div style={{ opacity: 0.8 }}>{service.durationMinutes} min</div>
-      <div style={{ marginTop: 6 }}>{service.priceNok} kr</div>
-    </div>
+    <article className="card">
+      <header className="card-header">
+        <div className="card-title">{service.name}</div>
+        <span className="pill">{service.durationMinutes} min</span>
+      </header>
+
+      {service.description ? (
+        <div className="card-meta">{service.description}</div>
+      ) : (
+        <div className="card-meta">Profesjonell behandling.</div>
+      )}
+
+      <footer className="card-footer">
+        <div className="price">{service.priceNok} kr</div>
+        <button className="button button-secondary" type="button">
+          Velg
+        </button>
+      </footer>
+    </article>
   );
 }
