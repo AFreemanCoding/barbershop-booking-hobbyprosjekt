@@ -1,5 +1,11 @@
-import { ServicesPage } from "./pages/ServicesPage";
+import "./App.css";
+import { Layout } from "./app/Layout";
+import { LandingPage } from "./pages/LandingPage";
 
 export default function App() {
-  return <ServicesPage />;
+  return (
+    <Layout>
+      <LandingPage />
+    </Layout>
+  );
 }
