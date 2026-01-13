@@ -1,42 +1,279 @@
-#root {
-  max-width: 1280px;
+.app {
+  color: #111;
+}
+
+.container {
+  width: min(1120px, 100%);
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 24px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(244, 241, 234, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2ddcf;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  gap: 24px;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #111;
+  color: #f4f1ea;
+  font-size: 1.1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.landing section {
+  padding: 72px 0;
+}
+
+.hero {
+  background: linear-gradient(135deg, #f4f1ea 0%, #e7dfcf 100%);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.3rem, 3vw, 3.5rem);
+  margin: 0 0 16px;
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: 12px;
+  color: #7a6a4f;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  margin-bottom: 24px;
+  color: #3f3422;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  background: #111;
+  color: #f4f1ea;
+  padding: 24px;
+  border-radius: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.hero-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero-card p {
+  margin: 6px 0 0;
+  font-size: 1.4rem;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.section-header p {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #7a6a4f;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
 }
 
 .card {
-  padding: 2em;
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid #eee3d2;
+  box-shadow: 0 10px 30px rgba(23, 16, 5, 0.08);
+  display: grid;
+  gap: 16px;
 }
 
-.read-the-docs {
-  color: #888;
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pill {
+  background: #111;
+  color: #f4f1ea;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  border: none;
+  background: #111;
+  color: #f4f1ea;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-secondary {
+  background: #f4f1ea;
+  color: #111;
+  border: 1px solid #d8ccb7;
+}
+
+.button-ghost {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+}
+
+.experience {
+  background: #111;
+  color: #f4f1ea;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.checklist li::before {
+  content: "✓";
+  margin-right: 8px;
+  color: #d9b86c;
+}
+
+.steps {
+  display: grid;
+  gap: 16px;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.step-number {
+  font-weight: 700;
+  color: #d9b86c;
+}
+
+.testimonials {
+  background: #efe7d7;
+}
+
+.cta {
+  background: #111;
+  color: #f4f1ea;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.site-footer {
+  background: #f0e7d6;
+  padding: 32px 0;
+  border-top: 1px solid #e2ddcf;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    display: none;
+  }
+
+  .hero-card p {
+    font-size: 1.1rem;
+  }
 }
